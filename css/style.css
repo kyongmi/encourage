@@ -1116,7 +1116,16 @@ footer .jyoho {
 
 .philosophy_area1 .container .r {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
+
+.philosophy_area1 .tegaki_name {
+    width: 20vw;
+    margin-top: 2vw;
+}
+
 
 .philosophy_area1 .container .box {
     display: flex;
@@ -1148,6 +1157,7 @@ footer .jyoho {
 .philosophy_area2 .wrapper_w:last-child {
     margin-bottom: 0;
 }
+
 
 
 
@@ -1386,9 +1396,14 @@ footer .jyoho {
 
 .recruit_area4 .box {
     display: flex;
-    flex-direction: column;
     align-items: end;
+    justify-content: flex-end;
     margin-top: 5vw;
+    gap: 2vw;
+}
+
+.recruit_area4 .box .tegaki_name {
+    width: 20vw;
 }
 
 .recruit_area4 .box  img {
@@ -2504,11 +2519,19 @@ footer .jyoho {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: center;
+        position: relative;
+    }
+
+    .philosophy_area1 .container .r .tegaki_name {
+        position: absolute;
+        bottom: -6vw;
+        left: 0vw;
+        width: 52vw;
     }
 
     .philosophy_area1 .container .r img {
-        width: 70%;
+        width: 100%;
     }
     .philosophy_area1 .container .box {
         margin-bottom: 10vw;
@@ -2716,6 +2739,10 @@ footer .jyoho {
         padding-bottom: 20vw;
     }
 
+    .recruit_area4 {
+        padding-bottom: 30vw;
+    }
+
     .recruit_area4 .w_85 {
         flex-direction: column;
     }
@@ -2731,10 +2758,16 @@ footer .jyoho {
 
     .recruit_area4 .box {
         margin-top: 10vw;
+        align-items: end;
+    }
+
+    .recruit_area4 .box .tegaki_name {
+        width: 35vw;
+        margin-top: 5vw;
     }
 
     .recruit_area4 .box img {
-        width: 60vw;
+        width: 50vw;
     }
 
 
