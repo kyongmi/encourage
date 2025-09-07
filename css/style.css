@@ -1,0 +1,2977 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+    font-size: 100%;
+}
+body{
+    background-color: #2291BF;
+    font-family: "Noto Sans JP", sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+
+
+a {
+    text-decoration-color: none;  /*リンクの色を消す*/
+    font-family: "Noto Sans JP", sans-serif;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+    width: fit-content;
+}
+img {
+    object-fit: fill;
+    object-position: center center;
+    width: 100%;
+}
+
+.logo{
+    object-fit: contain;
+}
+
+p{
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.h2_box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-bottom: 2.5vw;
+}
+
+h2 {
+    background-color: #ffffff;
+    color: #2291BF;
+    font-size: 3vw;
+    font-weight: 500;
+    padding: 0.5vw;
+    width: fit-content;
+    letter-spacing: -0.1em;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+.komidasi {
+    color: #1c1c1c;
+    font-size: 2.3vw;
+    font-weight: 500;
+}
+
+.midasi_box {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4vw;
+}
+
+.roma_box {
+    display: flex;
+    align-items: center;
+}
+
+.maru {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100vw;
+    background-color: #ffffff;
+    margin-right: 0.5vw;
+}
+
+.roma {
+    font-family: "Rubik", sans-serif;
+    font-size: 1vw;
+    color: #ffffff70;
+}
+
+.midasi {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 4.5vw;
+    font-weight: 500;
+    letter-spacing: -0.1em;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.text{
+    font-weight: 300;
+    font-size: 1.15vw;
+    letter-spacing: 0.07em;
+    font-size: 1.4vw;
+    line-height: 1.5;
+}
+
+  html,body {
+    overflow-x: hidden;
+  }
+
+/*追従*/
+
+.form{
+    position: fixed;
+    z-index: 99999;
+    bottom: 50px;
+    right: 50px;
+    width: 350px;
+}
+
+.inner {
+    width: 1000px;
+}
+
+.pc {
+    display: block;
+}
+
+.sp {
+    display: none;
+}
+
+/*画像の下の隙間を消すコード*/
+
+
+
+img{
+	vertical-align:top;
+}
+
+.w_85 {
+    margin: 0 2vw 0 15vw;
+}
+
+.view_w {
+    border-radius: 100vw;
+    padding: 0.8vw 1.5vw;
+    border: solid #ffffff 0.2vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 17vw;
+}
+
+.view_w p {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.5vw;
+}
+
+.view_b {
+    background-color: #2291BF;
+    border-radius: 100vw;
+    padding: 0.8vw 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 17vw;
+}
+
+.view_b p {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.5vw;
+}
+
+.yajirusi_w {
+    width: 2.5vw;
+    position: absolute;
+    right: 1.5vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.solid_box {
+    display: flex;
+    margin-right: 2vw;
+    display: flex;
+    justify-content: end;
+}
+
+.solid {
+    background-color: #ffffff60;
+    height: 0.2vw;
+    width: 85%;
+}
+
+.no {
+    font-family: "Rubik", sans-serif;
+    font-size: 7.5vw;
+    font-weight: 400;
+}
+
+
+.area2,
+.area3,
+.area4,
+.area5,
+.area6,
+.area7,
+.philosophy_area2,
+.recruit_area4,
+.recruit_area5 {
+    padding: 5vw 0 10vw 0;
+    position: relative;
+}
+
+
+.area2 .view_w,
+.area3 .view_w,
+.area4 .view_b,
+.area5 .view_b ,
+.area6 .view_w {
+    position: absolute;
+    right: 2vw;
+    top: 6vw;
+}
+
+
+
+
+/* 背景
+------------------------------- */
+
+.back img {
+  position: fixed;
+  top: 10vw;
+  left: 25vw;
+  height: 100vh;
+  object-fit: contain; /* 画面いっぱいに拡大 */
+  z-index: -10;       /* 背景のようにする */
+}
+
+
+
+/* HEADER
+------------------------------- */
+
+.pc_header {
+    display: block;
+    z-index: 100;
+    padding: 2vw;
+    position: fixed;
+    width: 100%;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+}
+
+.pc_header.hidden {
+  opacity: 0;
+  pointer-events: none; /* フェードアウト時にクリックできないように */
+}
+
+.pc_header .u {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 2vw;
+}
+
+
+.contact_btn_box {
+    display: flex;
+    gap: 1.5vw;
+}
+
+.tel {
+    background-color: #ffffff;
+    border-radius: 100vw;
+    padding: 1vw 2vw;
+    position: relative;
+    width: 20vw;
+}
+.tel_no {
+    font-weight: 400;
+    color: #2291BF;
+    font-size: 1.5vw;
+}
+
+.tel .text {
+    color: #2291BF;
+    font-size: 1.2vw;
+}
+
+.time {
+    font-weight: 400;
+    color: #2291BF;
+}
+
+.tel .yajirusi {
+    width: 2.5vw;
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact_btn_box .contact {
+    border-radius: 100vw;
+    border: solid 0.2vw #ffffff;
+    background-color: #2291BF;
+    padding: 1vw 2vw;
+    position: relative;
+    width: 20vw;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+.contact_btn_box .contact p {
+    font-weight: 500;
+}
+
+.contact_btn_box .contact .text {
+    color: #ffffff;
+    font-size: 1.5vw;
+}
+
+.contact_btn_box .contact .yajirusi {
+    width: 2.5vw;
+    position: absolute;
+    right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pc_header .d {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+    position: absolute;
+    top: 10vw;
+    left: 2vw;
+}
+
+.pc_header .d a {
+    font-size: 1.2vw;
+}
+
+.pc_header.headerColorScroll {
+    background-color: rgba(52, 52, 52, 0.562);
+    transition: color 0.4s ease-in;
+  }
+
+.pc_top {
+    background-image: url(../images/20241118_1250.png);
+    background-size: cover;
+    height: 770px;
+}
+
+.sp_top {
+    display: none;
+}
+
+
+.top_icon {
+    width: 28vw;
+    height: auto;
+}
+
+.pc_menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.pc_menu p{
+    font-size: 15px;
+    color: #ffff;
+    font-weight: 700;
+}
+
+.pc_menu a {
+    font-size: 16px;
+    height: max-content;
+    color: #ffff;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+
+.pc_menu .btn {
+	position: relative;
+	width: 230px;
+	height: 80px;
+	margin: 0 auto;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+.pc_menu .btn img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	display: block;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.pc_menu .btn:hover img:nth-of-type(2) {
+	opacity: 0;
+}
+
+
+
+
+/* top_ga------------------------------- */
+
+/*
+
+.top_ga {
+    height: 640px;
+    background-image: url(../images/20241004_1545.svg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.top_ga .text_box {
+    width: 1000px;
+}
+
+.top_ga .no1 {
+    font-weight: 700;
+    font-size: 45px;
+    color: #FF0000;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: inline;
+    padding: 0.2em;
+    line-height: 2.2;
+    background-color: #ffff;
+}
+
+.top_ga .no2 {
+    font-weight: 700;
+    font-size: 18px;
+    color: #FF0000;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: inline;
+    padding: 0.2em;
+    line-height: 2.2;
+    background-color: #ffff;
+}
+
+*/
+
+
+
+
+/* area_top
+------------------------------- */
+
+.area_top {
+    margin-top: 10vw;
+}
+
+.area_top .w_85 {
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+.area_top img {
+    width: 70vw;
+}
+
+.area_top .text_box {
+    position: absolute;
+    bottom: 2.5vw;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.area_top h1 {
+    background-color: #ffffff;
+    color: #2291BF;
+    font-size: 5.5vw;
+    font-weight: 600;
+    padding: 0.5vw;
+    width: fit-content;
+    letter-spacing: -0.1em;
+}
+
+
+
+
+/* area1
+---------------------------------------- */
+
+.area1 {
+    padding: 10vw 0;
+}
+
+.area1 .w_85 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.area1 .r {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+
+
+/* area2------------------------------- */
+
+
+
+.area2 .midasi_box {
+    padding-bottom: 10vw;
+}
+
+.area2 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10vw;
+}
+
+.area2 .l {
+    position: relative;
+}
+
+.area2 .l .no {
+    position: absolute;
+    left: 1vw;
+    top: -5vw;
+}
+
+.area2 .box {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.area2 .box img {
+    width: 25vw;
+}
+
+/* area3------------------------------- */
+
+.area3 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 3vw;
+    padding-bottom: 5vw;
+}
+
+.area3 .container .box {
+    width: 60vw;
+    display: flex;
+    gap: 2vw;
+}
+
+.area3 .l {
+    width: 40%;
+}
+
+.area3 .l img {
+    margin-top: 2vw;
+    width: 20vw;
+}
+
+.area3 .store {
+    font-size: 1.2vw;
+}
+
+.area3 .name {
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.area3 .link {
+    color: #ffffff80;
+    border-radius: 100vw;
+    border: solid #ffffff80 0.12vw;
+    padding: 0.2vw 2vw;
+    width: fit-content;
+    font-size: 1.2vw;
+}
+
+.area3 .link_box {
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.area3 .r {
+    background-color: #ffffff80;
+    border-radius: 1vw;
+    padding: 3vw;
+    width: 60%;
+}
+
+.area3 .text {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+.container_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 3vw;
+}
+
+.container_2 .box {
+   width: 60vw;
+    
+}
+
+.container_2 .komidasi,
+.faq_area2 .komidasi,
+.review_area2 .komidasi {
+    color: #ffffff95;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+    font-weight: 400;
+}
+
+
+
+
+/* area4------------------------------- */
+
+.wrapper {
+    background-color: #ffffff40;
+    margin: 0 2vw;
+    border-radius: 2vw;
+}
+
+.area4 .midasi_box .roma {
+    color: #ffffff;
+}
+
+.area4 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+
+.area4 .blog_box {
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列（均等幅） */
+    gap: 1.5vw; /* 要素の間隔 */
+}
+
+.blog_box .blog img {
+    border-radius: 1vw 1vw 0 0;
+}
+
+.blog_box .blog .text_box {
+    background-color: #ffffff70;
+    border-radius: 0 0 1vw 1vw;
+    padding: 2vw;
+}
+
+.blog_box .blog .title {
+    color: #1c1c1c;
+    font-size: 1.5vw;
+    font-weight: 500;
+    margin-bottom: 1vw;
+}
+
+.blog_box .blog .text {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+
+
+/* area5------------------------------- */
+
+.area5 .midasi_box .roma {
+    color: #ffffff;
+}
+
+.area5 .container,
+.about_area1 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.area5 ul {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.area5 li {
+    background-color: #ffffff50;
+    border-radius: 0.5vw;
+    padding: 1vw 1.5vw;
+    position: relative;
+}
+
+.area5 li .day {
+    font-size: 1.2vw;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+
+.area5 span {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+.area5 .text {
+    margin-left: 2vw;
+}
+
+.area5 li a {
+    width: 2vw;
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+
+/* area6------------------------------- */
+
+
+
+/* リセットCSS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 外枠 */
+article {
+  margin: 20px auto;
+  padding: 20px;
+  width: 300px;
+  background-color: whitesmoke;
+}
+
+/* アコーディオン　見出し部分 */
+details > summary {
+  cursor: pointer;
+  padding: 1vw 1.5vw;
+  background-color: #ffffff70;
+  border-radius: 0.5vw;
+  display: flex;
+  align-items: center;
+}
+
+/* アコーディオン　見出し部分　オープン時 */
+details[open] > summary {
+  background-color: #ffffff70;
+  border-bottom: none;
+}
+
+/* アコーディオン　内容部分 */
+details > div {
+  padding: 1vw;
+
+}
+
+/* アコーディオン　内容部分　オープン時 */
+details[open] > div {
+  border-top-style: none;
+  display: flex;
+  align-items: center;
+}
+
+/* アコーディオン　見出し部分　プラス・マイナスのマーク */
+details {
+  position: relative;
+}
+details > summary::after {
+  position: absolute;
+  content: '＋';
+  top: 1.2vw;
+  right: 3vw;
+}
+details[open] > summary::after {
+  content: '−';
+  top: 1.2vw;
+  right: 3vw;
+}
+
+/* アコーディオン　Safariの▲マークを消す */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* アコーディオン間のスペース */
+details + details {
+  margin-top: 1vw;
+  width: 100%;
+}
+
+
+
+summary .text {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+
+.w-b{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 2vw;
+    letter-spacing: 0.1em;
+    margin-right: 2vw;
+    color: #2291BF;
+}
+
+.w-a{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 2vw;
+    letter-spacing: 0.1em;
+    margin-right: 2vw;
+    color: #ffffff;
+}
+
+.area6 .pass {
+    width: 3px !important;
+    height: 60px;
+    background-color: #000747;
+    margin-right: 20px;
+}
+
+
+.area6 .button_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.area6 .btn {
+	position: relative;
+	width: 300px;
+	height: 120px;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+}
+.area6 .btn img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	display: block;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.area6 .btn:hover img:nth-of-type(2) {
+	opacity: 0;
+}
+
+
+
+
+/* area7------------------------------- */
+
+.area7 {
+    padding-top: 0;
+    padding-bottom: 3vw;
+}
+
+.area7 .box {
+    display: flex;
+    gap: 3vw;
+}
+
+/* footer------------------------------------------------------------------------------------------------ */
+
+.page-fotter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 2vw;
+    border-radius: 2vw;
+    padding: 3vw;
+}
+
+.page-fotter .box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5vw;
+}
+
+.page-fotter .logo {
+    width: 40vw;
+}
+
+.page-fotter p ,
+.page-fotter a {
+    color: #1c1c1c;
+    font-size: 1vw;
+}
+
+.page-fotter .l {
+    width: 70%;
+}
+
+.page-fotter .r {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.page-fotter .r img {
+    width: 250px;
+}
+
+.page-fotter .icon_box {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    height: 70px;
+}
+
+.page-fotter .icon_box a{
+    width: 50px;
+}
+
+.page-fotter span {
+    width: 1px;
+    height: 20px;
+    background-color: #ffff;
+}
+
+footer .jyoho {
+    margin-top: 3vw;
+}
+
+
+
+
+/* privacy======================================================================================== */
+
+.privacy_area1,
+.service_area1,
+.philosophy_area1,
+.faq_area1,
+.blog_area1,
+.blog_note_area1,
+.seminar_area1,
+.about_area1,
+.recruit_area1,
+.contact_area1,
+.review_area1,
+.news_area1 {
+    margin-top: 15vw;
+}
+
+.wrapper_w {
+    background-color: #ffffff70;
+    border-radius: 2vw;
+    padding: 3vw;
+}
+
+.wrapper_w .text {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+.privacy_area1 .wrapper_w {
+    margin-bottom: 10vw;
+}
+
+
+
+/* service ======================================================================================== */
+
+.service_area2 {
+    margin-bottom: 10vw;
+}
+
+
+.service_area2 .w_85 {
+    gap: 10vw;
+}
+
+.service_area2 .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    margin-top: 10vw;
+}
+
+
+.btn_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8vw;
+}
+
+.btn_list .view_w p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+}
+
+.btn_list .view_w {
+    width: 42vw;
+}
+
+
+.service_area2 .box {
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+}
+
+.service_area2 .box .l {
+    width: 50%;
+    position: relative;
+}
+
+.service_area2 .box .l .no {
+    position: absolute;
+    top: -4vw;
+    left: 2vw;
+}
+
+.service_area2 .box .r {
+    width: 50%;
+}
+
+.service_area2 .wrapper_w .box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2vw;
+    position: relative;
+}
+
+.freee {
+    position: absolute;
+    top: 1vw;
+    right: 0vw;
+    width: 20vw;
+}
+
+.wrapper_w .solid {
+    width: 100%;
+    background-color: #ffffff;
+    margin: 3vw 0;
+}
+
+.wrapper_w .view_b {
+    width: 45vw;
+}
+
+.wrapper_w .view_b p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+}
+
+.wrapper_w .img_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3vw;
+    gap: 0.5vw;
+}
+
+
+
+
+
+
+/* philosophy ======================================================================================== */
+
+.philosophy_area1 .container {
+    display: flex;
+    gap: 3vw;
+}
+
+.philosophy_area1 .container .l {
+    width: 60%;
+}
+
+.philosophy_area1 .container .r {
+    width: 40%;
+}
+
+.philosophy_area1 .container .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-bottom: 3vw;
+}
+
+.philosophy_area1 .container .komidasi {
+    color: #ffffff;
+}
+
+.philosophy_area2 .komidasi_box {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 2vw;
+}
+
+.philosophy_area2 .no {
+    color: #2291BF;
+    font-size: 3.5vw;
+}
+
+.philosophy_area2 .wrapper_w {
+    margin-bottom: 3vw;
+}
+
+.philosophy_area2 .wrapper_w:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* faq ======================================================================================== */
+
+
+.faq_area2 {
+    margin: 10vw 0 0 0;
+}
+
+.cta_box {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 5vw 0 2vw 0;
+}
+
+.cta_box .midasi_box {
+    padding-bottom: 0;
+}
+
+.cta_box .midasi {
+    font-size: 3vw;
+}
+
+.cta_box .roma {
+    margin-bottom: 0.5vw;
+}
+
+.cta_box .contact_btn_box .contact {
+    padding: 1.5vw 2vw;
+}
+
+#no5_solid {
+    margin-bottom: 10vw;
+}
+
+
+
+/* blog ======================================================================================== */
+
+.blog_area1 {
+    margin-bottom: 10vw;
+}
+
+.blog_box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5vw; /* 要素の間隔 */
+}
+
+
+/* blog_note ======================================================================================== */
+
+.blog_note_area1 {
+    margin-bottom: 10vw;
+}
+
+.blog_note_area1 h1 {
+    margin-bottom: 5vw;
+    line-height: 1.2;
+}
+
+
+
+
+/* seminar ======================================================================================== */
+
+.seminar_area2 {
+    margin: 10vw 0;
+}
+
+.seminar_area2 .wrapper_w {
+    margin-bottom: 3vw;
+}
+
+
+
+
+
+/* about ======================================================================================== */
+
+.about_area1 .box {
+    width: 60vw;
+}
+
+.about_area1 .container {
+    margin-bottom: 10vw;
+}
+
+.about_area1 .list {
+    display: flex;
+    padding: 1.5vw 2vw 0.5vw 2vw;
+    border-bottom: solid #ffffff70 0.2vw;
+}
+
+.about_area1 .list .text{
+    width: 70%;
+}
+
+.about_area1 .list  .koumoku {
+    width: 30%;
+}
+
+.about_area1 iframe {
+    width: 60vw;
+    height: 30vw;
+    margin-top: 5vw;
+}
+
+
+/* recruit ======================================================================================== */
+
+.recruit_area1 .img_box {
+    position: relative;
+    height: 50vw;
+}
+
+.recruit_area1 .img_box .no1 {
+    width: 30vw;
+    position: absolute;
+    left: 0vw;
+    top: 7vw;
+    z-index: -1;
+}
+
+.recruit_area1 .img_box .no2 {
+    width: 35vw;
+    position: absolute;
+    left: 24vw;
+    top: 13vw;
+}
+
+.recruit_area1 .img_box .no3 {
+    width: 30vw;
+    position: absolute;
+    right: 0vw;
+    top: 0vw;
+    z-index: -1;
+}
+
+.recruit_area2 .box {
+    display: flex;
+    gap: 3vw;
+}
+
+.recruit_area2 .box .l {
+    width: 30%;
+}
+
+.recruit_area2 .box .r {
+    width: 70%;
+}
+
+.recruit_area2 .komidasi {
+    margin-bottom: 2vw;
+}
+
+.recruit_area2 .wrapper_w {
+    display: flex;
+    margin-top: 5vw;
+}
+
+.recruit_area2 .wrapper_w .solid {
+    height: 17vw;
+    width: 0.2vw;
+    margin: 0;
+    margin: 0 2vw;
+}
+
+.recruit_area2 .wrapper_w .l {
+    width: 50%;
+}
+
+.recruit_area2 .wrapper_w .r {
+    width: 50%;
+}
+
+.recruit_area2#no2 {
+    margin-top: 10vw;
+}
+
+.recruit_area3 {
+    margin: 10vw 0;
+}
+
+.recruit_area3 .w_85 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.recruit_area3 .w_85 .l {
+    width: 50%;
+}
+
+.recruit_area3 .midasi {
+    font-size: 3.5vw;
+    margin-bottom: 1vw;
+}
+
+.recruit_area3 .w_85 .r {
+    width: 50%;
+    position: relative;
+    height: 20vw;
+}
+
+.recruit_area3 .w_85 .r .no1 {
+    width: 25vw;
+    position: absolute;
+    top: 7vw;
+    left: 0vw;
+}
+
+.recruit_area3 .w_85 .r .no2 {
+    width: 20vw;
+    position: absolute;
+    top: 0vw;
+    left: 18vw;
+    z-index: -1;
+}
+
+.recruit_area4 .w_85 {
+    display: flex;
+    gap: 3vw;
+}
+
+.recruit_area4 .w_85 .l {
+    width: 30%;
+}
+
+.recruit_area4 .w_85 .r {
+    width: 70%;
+}
+
+.recruit_area4 .box {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 5vw;
+}
+
+.recruit_area4 .box  img {
+    width: 30vw;
+}
+
+
+/* recruit contact--------------------------------------------------------------------------------------- */
+
+
+
+
+.recruit_area5 .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.recruit_area5 .contact a {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.recruit_area5 .contact .required {
+    background-color: #cc403b;
+    border-radius: 0.5vw;
+    color: #ffff;
+    margin-left: 0.5vw;
+    padding: 0.2vw 0.5vw;
+    font-size: 1vw;
+}
+
+.recruit_area5 form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.recruit_area5 form div{
+    margin-bottom: 2vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recruit_area5 form div:nth-child(8) {
+    width: fit-content;
+    margin-top: 2vw;
+}
+
+.recruit_area5 label{
+    font-size: 1.2vw;
+    color: #1c1c1c;
+    display: block;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 0.6vw;
+}
+
+
+.recruit_area5 input[type="text"],
+.recruit_area5 input[type="email"],
+.recruit_area5 input[type="tel"],
+.recruit_area5 textarea,
+.recruit_area5 select{
+    background: #ececec;
+    padding: 1vw;
+    font-size: 1.2vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+}
+
+.recruit_area5 input[type="text"],
+.recruit_area5 input[type="email"],
+.recruit_area5 input[type="tel"],
+.recruit_area5 select{
+    width: 70%;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.recruit_area5 textarea{
+    width: 70%;
+    height: 10vw;
+}
+
+.recruit_area5 input[type="submit"]{
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+
+
+.recruit_area5 .underbutton {
+    width: 350px;
+    margin: 50px 0 30px 0;
+    color: #ffff;
+}
+
+.recruit_area5 .checkbox {
+    display: flex;
+    align-items: baseline;
+}
+
+.recruit_area5 .checkbox label {
+    margin-left: 10px;
+}
+
+.recruit_area5 .contact button {
+    width: 20vw;
+    padding: 20px;
+    background-color: #2291BF;
+    color: #ffff;
+    border-radius: 100vw;
+    font-weight: 500;
+    margin-top: 3vw;
+    position: relative;
+}
+
+
+
+/* review ======================================================================================== */
+
+.review_area1 {
+    margin-bottom: 10vw;
+}
+
+.review_area1 .box {
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+}
+
+.review_area1 .box .l {
+    width: 50%;
+}
+
+.review_area1 .box .r {
+    width: 50%;
+} 
+
+
+.review_area1 .store {
+    font-size: 1.5vw;
+}
+
+.review_area1 .name {
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+.review_area1 .link {
+    color: #ffffff80;
+    border-radius: 100vw;
+    border: solid #ffffff80 0.12vw;
+    padding: 0.2vw 2vw;
+    width: fit-content;
+    font-size: 1.2vw;
+}
+
+.review_area1 .link_box {
+    padding-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.review_area1 .wrapper_w {
+    margin-top: 5vw;
+}
+
+.review_area1 .container#no2 {
+    margin-top: 10vw;
+}
+
+.review_area2 {
+    margin: 5vw 0 10vw 0;
+}
+
+
+
+/* news ======================================================================================== */
+
+.news_area1 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.news_area1 .container ul {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.news_area1 .container li {
+    background-color: #ffffff70;
+    border-radius: 0.5vw;
+    padding: 1vw 1.5vw;
+    position: relative;
+}
+
+.news_area1 .container li .day {
+    font-size: 1.2vw;
+    font-weight: 400;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.news_area1 .container .text {
+    margin-left: 2vw;
+}
+.news_area1  li a {
+    width: 2vw;
+    position: absolute;
+    right: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.news_area1 span {
+    color: #1c1c1c;
+    font-weight: 400;
+}
+
+.news_area1 {
+    margin-bottom: 10vw;
+}
+
+
+
+/* contact ======================================================================================== */
+
+.contact_area1 .wrapper_w {
+    margin: 5vw 0 10vw 0;
+}
+
+
+
+.contact_area1 .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.contact_area1 .contact a {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.contact_area1 .contact .required {
+    background-color: #cc403b;
+    border-radius: 0.5vw;
+    color: #ffff;
+    margin-left: 0.5vw;
+    padding: 0.2vw 0.5vw;
+    font-size: 1vw;
+}
+
+.contact_area1 form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.contact_area1 form div{
+    margin-bottom: 2vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact_area1 form div:nth-child(8) {
+    width: fit-content;
+    margin-top: 2vw;
+}
+
+.contact_area1 label{
+    font-size: 1.2vw;
+    color: #1c1c1c;
+    display: block;
+    font-weight: 400;
+    margin: 0 auto;
+    margin-top: 0.6vw;
+}
+
+
+.contact_area1 input[type="text"],
+.contact_area1 input[type="email"],
+.contact_area1 input[type="tel"],
+.contact_area1 textarea,
+.contact_area1 select{
+    background: #ececec;
+    padding: 1vw;
+    font-size: 1.2vw;
+    height: 3vw;
+    border-radius: 0.5vw;
+}
+
+.contact_area1 input[type="text"],
+.contact_area1 input[type="email"],
+.contact_area1 input[type="tel"],
+.contact_area1 select{
+    width: 70%;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.contact_area1 textarea{
+    width: 70%;
+    height: 10vw;
+}
+
+.contact_area1 input[type="submit"]{
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+
+
+.contact_area1 .underbutton {
+    width: 350px;
+    margin: 50px 0 30px 0;
+    color: #ffff;
+}
+
+.contact_area1 .checkbox {
+    display: flex;
+    align-items: baseline;
+}
+
+.contact_area1 .checkbox label {
+    margin-left: 10px;
+}
+
+.contact_area1 .contact button {
+    width: 20vw;
+    padding: 20px;
+    background-color: #2291BF;
+    color: #ffff;
+    border-radius: 100vw;
+    font-weight: 500;
+    margin-top: 3vw;
+    position: relative;
+}
+
+
+
+
+/* アニメーション ----------------------------------------*/
+
+
+
+/* 初期状態：下にずらして透明 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 表示される時 */
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 表示される時 */
+.fade-up2.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s; /* ここで遅延を設定 */
+}
+
+.fade-up3 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 表示される時 */
+.fade-up3.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s; /* ここで遅延を設定 */
+}
+
+
+
+
+
+.fade-up-onload {
+  opacity: 0;
+  transition: opacity 1.8s ease; /* じわっと */
+}
+
+.fade-up-onload.visible {
+  opacity: 1;
+}
+
+.fade-up-onload2 {
+  opacity: 0;
+  transition: opacity 1.8s ease; /* じわっと */
+}
+
+.fade-up-onload2.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s; /* ここで遅延を設定 */
+}
+
+
+
+
+
+/*モバイル版
+--------------------------------------------------------------------------モバイル版*/
+@media (max-width: 600px) {
+
+
+
+
+    p {
+        line-height: 1.2em;
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 9vw;
+        padding: 1vw;
+    }
+
+    .h2_box {
+        gap: 1.5vw;
+        margin-bottom: 5vw;
+    }
+
+    .text {
+        font-size: 4vw;
+    }
+
+    a {
+        font-size: 4vw;
+    }
+
+    .midasi {
+        font-size: 10vw;
+    }
+
+    .midasi_box {
+        padding-bottom: 10vw;
+    }
+
+    .komidasi {
+        font-size: 6vw;
+    }
+
+    
+
+    .roma {
+        font-size: 4vw;
+    }
+
+    .view_w {
+        border: solid #ffffff 0.5vw;
+        padding: 2vw 5.5vw;
+        width: 50vw;
+    }
+
+    .view_b {
+        padding: 2vw 5.5vw;
+        width: 50vw;
+    }
+
+    .view_w p {
+        font-size: 4.5vw;
+    }
+
+    .view_b p {
+        font-size: 4.5vw;
+    }
+
+    .yajirusi_w {
+        width: 5.5vw;
+        right: 4vw;
+    }
+
+    .maru {
+        width: 3vw;
+        height: 3vw;
+        margin-right: 1.5vw;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .sp {
+        display: block;
+    }
+
+
+    .w_85 {
+        margin: 0 5vw;
+    }
+
+    .solid_box {
+        margin: 0 5vw;
+    }
+
+    .solid {
+        width: 100%;
+        height: 0.5vw;
+    }
+
+    .area2,
+    .area3,
+    .area4,
+    .area5,
+    .area6,
+    .area7,
+    .recruit_area3,
+    .recruit_area4,
+    .recruit_area5 {
+        padding: 10vw 0 40vw 0;
+    }
+
+    .area2 .view_w, .area3 .view_w, .area4 .view_b, .area5 .view_b, .area6 .view_w {
+        bottom: 15vw;
+        left: 5vw;
+        right: auto;
+        top: auto;
+    }
+
+    .no {
+        font-size: 24.5vw;
+    }
+
+
+    /* ヘッダー------------------------------- */
+
+    .pc_header {
+        display: none;
+    }
+
+    .sp_top{
+        width: 100%;
+        display: block;
+        padding: 3vw;
+        position: fixed;
+        z-index: 100;
+
+    }
+
+    .sp_top header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .sp_top h1 {
+        margin-top: 520px;
+        margin-left: 5%;
+        font-size: 32px;
+        line-height: 1.5em;
+    }
+
+
+    .sp_top .logo_box img{
+        width: 60vw;
+        height: auto;
+    }
+
+
+
+
+
+    /* ハンバーガーボタンのデザイン */
+    .drawer__button {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+        z-index: 999; /* メニューを開いている時もクリックできるよう設定 */
+    }
+    /* ハンバーガーボタン内の線 */
+    .drawer__button > span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 3px;
+        background-color: #ffff;
+        transform: translateX(-50%);
+    }
+    .drawer__button > span:first-child {
+        transform: translate(-50%, calc(-50% - 0.5rem));
+        transition: transform 0.3s ease;
+    }
+    .drawer__button > span:nth-child(2) {
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+    }
+    .drawer__button > span:last-child {
+        transform: translate(-50%, calc(-50% + 0.5rem));
+        transition: transform 0.3s ease;
+    }
+    /* 展開時のデザイン */
+    .drawer__button.active > span:first-child {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: #2291BF;
+    }
+    .drawer__button.active > span:nth-child(2) {
+        opacity: 0;
+    }
+    .drawer__button.active > span:last-child {
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: #2291BF;
+    }
+    /* メニューのデザイン */
+    .drawer__nav {
+        position: fixed; /* 追従ヘッダーなどでも表示できるよう設定しておく */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+
+
+
+
+
+    .drawer__nav.active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+    }
+
+    .drawer__nav__inner {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        padding: 3rem 0rem;
+        margin: 0 0 0 auto;
+        overflow: scroll;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .drawer__nav.active .drawer__nav__inner {
+        transform: translateX(0);
+    }
+
+    .drawer__nav__inner a{
+        color: #1c1c1c;
+        font-family: 400;
+        width: 100%;
+        text-align: center;
+        padding: 3vw;
+    }
+
+
+    /* ハンバーガーメニュー展開時、背景を固定 */
+    body.active {
+        height: 100%;
+        overflow: hidden;
+    }
+
+
+
+    .contact_btn_box {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 5vw;
+    }
+
+    .drawer__nav__inner .logo {
+        width: 60vw;
+        margin-bottom: 3vw;
+    }
+
+    .tel {
+        width: 70vw !important;
+        border: #2291BF solid 0.7vw;
+        padding: 2vw 6vw !important;
+        height: 17vw;
+    }
+
+    .tel_no {
+        font-size: 5vw;
+    }
+
+    .tel .text {
+        font-size: 4vw;
+        font-weight: 400;
+    }
+
+    .tel .yajirusi {
+        width: 7.5vw;
+        right: 5vw;
+    }
+
+    .contact_btn_box .contact {
+        width: 70vw !important;
+        height: 17vw;
+        padding: 2vw 6vw !important;
+        border: solid 0.7vw #ffffff;
+    }
+
+    .contact_btn_box .contact .text {
+        font-size: 4vw;
+        font-weight: 400;
+    }
+
+    .contact_btn_box .contact .yajirusi {
+         width: 7.5vw;
+        right: 5vw;
+    }
+
+
+    /* area_top------------------------------- */
+
+    .area_top {
+        margin-top: 50vw;
+    }
+
+    .area_top img {
+        width: 75vw;
+        height: 75vw;
+        object-fit: cover;
+        border-radius: 2vw 10vw 2vw 10vw;
+    }
+
+    .area_top h1 {
+        font-size: 10vw;
+        padding: 1vw;
+    }
+
+    .area_top .text_box {
+        top: -32vw;
+        gap: 2vw;
+    }
+
+
+
+    /* area1------------------------------- */
+
+    .area1 {
+        padding: 20vw 0;
+    }
+
+    .area1 .w_85 {
+        flex-direction: column;
+    }
+
+    .area1 .r {
+        width: 100%;
+        gap: 10vw;
+    }
+
+
+    /* area2------------------------------- */
+
+    .area2 .container {
+        gap: 30vw;
+    }
+
+    .area2 .midasi_box {
+        padding-bottom: 20vw;
+    }
+
+    .area2 .box {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .area2 .box img {
+        width: 90vw;
+    }
+
+    .area2 .l .no {
+        top: -15vw;
+    }
+
+
+
+    /* area3------------------------------- */
+
+    .area3 .container {
+        gap: 15vw;
+        padding-bottom: 15vw;
+    }
+
+
+    .area3 .container .box {
+        flex-direction: column;
+        width: 100%;
+        gap: 5vw;
+    }
+
+    .area3 .l {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 5vw;
+    }
+
+    .area3 .l img {
+        width: 100%;
+    }
+
+    .area3 .r {
+        width: 100%;
+        border-radius: 2vw;
+        padding: 5vw;
+    }
+
+    .area3 .store {
+        font-size: 4vw;
+    }
+
+    .area3 .name {
+        font-size: 7.5vw;
+    }
+
+    .area3 .link {
+        border: solid #ffffff80 0.4vw;
+        padding: 0.5vw 5vw;
+        font-size: 4vw;
+    }
+
+    .area3 .link_box {
+        padding-top: 5vw;
+        gap: 2vw;
+    }
+
+    .container_2 .box {
+        width: 100%;
+    }
+
+    .container_2 .komidasi,
+    .faq_area2 .komidasi,
+    .review_area2 .komidasi {
+        font-size: 5vw;
+        margin-bottom: 2vw;
+    }
+
+
+    /* area4------------------------------- */
+
+    .wrapper {
+        border-radius: 5vw;
+    }
+
+    .area4 .blog_box {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 5vw;
+    }
+
+    .blog_box .blog img {
+        border-radius: 2vw 2vw 0 0;
+    }
+
+    .blog_box .blog .text_box {
+        border-radius: 0 0 2vw 2vw;
+        padding: 5vw;
+    }
+
+    .blog_box .blog .title {
+        font-size: 5vw;
+        margin-bottom: 3vw;
+    }
+
+
+    /* area5------------------------------- */
+
+
+    .area5 ul {
+        width: 100%;
+        gap: 2vw;
+    }
+
+    .area5 li {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5vw;
+        padding: 2vw 13vw 2vw 2.5vw;
+    }
+
+    .area5 li .day {
+        font-size: 4vw;
+    }
+
+    .area5 .text {
+        margin-left: 0;
+    }
+
+    .area5 li a {
+        width: 7vw;
+        right: 4vw;
+    }
+
+
+    /* area6------------------------------- */
+
+    details > summary {
+        padding: 3vw 12vw 3vw 3.5vw;
+        border-radius: 1.5vw;
+    }
+
+    .w-b {
+        font-size: 8vw;
+    }
+    .w-a {
+        font-size: 8vw;
+    }
+
+    details + details {
+        margin-top: 3vw;
+    }
+
+    details > div {
+        padding: 4vw;
+    }
+
+    /* area7------------------------------- */ 
+
+    .area7 {
+        padding-bottom: 10vw;
+    }
+
+    .area7 .box {
+        flex-direction: column;
+    }
+
+    .area7 .contact_btn_box {
+        width: fit-content;
+    }
+
+
+
+
+    /* footer------------------------------- */
+
+    .page-fotter {
+        padding: 5vw;
+        margin: 5vw;
+        align-items: start;
+    }
+
+    .page-fotter .box {
+        flex-direction: column;
+        gap: 10vw;
+        margin-bottom: 15vw;
+    }
+
+    footer .jyoho {
+        margin-top: 5vw;
+    }
+
+    .page-fotter .logo {
+        width: 65vw;
+    }
+
+    .page-fotter p, .page-fotter a {
+        font-size: 3vw;
+    }
+
+    .page-fotter .r {
+        gap: 2vw;
+    }
+
+
+
+
+
+
+
+
+
+    /* privacy======================================================================================== */
+
+
+    .privacy_area1,
+    .service_area1,
+    .philosophy_area1,
+    .faq_area1,
+    .blog_area1,
+    .blog_note_area1,
+    .seminar_area1,
+    .about_area1,
+    .recruit_area1,
+    .contact_area1,
+    .review_area1,
+    .news_area1 {
+        margin-top: 25vw;
+    }
+
+    .wrapper_w {
+        padding: 10vw 5vw;
+        border-radius: 5vw;
+    }
+
+    
+
+
+
+
+
+
+    /* service ======================================================================================== */
+
+
+    .btn_list .view_w {
+        width: 100%;
+    }
+
+    .btn_list {
+        gap: 2vw;
+    }
+
+    .service_area2 .container {
+        margin-top: 30vw;
+        gap: 10vw;
+    }
+
+    .service_area2 .box {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .service_area2 .box .l {
+        width: 100%;
+    }
+
+    .service_area2 .box .l .no {
+        top: -15vw;
+    }
+
+    .service_area2 .box .r {
+        width: 100%;
+    }
+
+    .wrapper_w .solid {
+        margin: 10vw 0;
+    }
+
+    .service_area2 .wrapper_w .box {
+        gap: 7vw;
+    }
+
+    .wrapper_w .view_b {
+        width: 100%;
+        padding-right: 12vw;
+    }
+
+
+    #freee {
+        margin-bottom: 60vw;
+    }
+
+    .freee {
+        width: 100%;
+        top: 58vw;
+    }
+
+    .wrapper_w .img_box {
+        grid-template-columns: 1fr;
+        gap: 3vw;
+    }
+
+
+
+
+    /* philosophy ======================================================================================== */
+
+
+    .philosophy_area1 .container {
+        flex-direction: column-reverse;
+        gap: 10vw;
+    }
+
+    .philosophy_area1 .container .l {
+        width: 100%;
+    }
+
+    .philosophy_area1 .container .r {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .philosophy_area1 .container .r img {
+        width: 70%;
+    }
+    .philosophy_area1 .container .box {
+        margin-bottom: 10vw;
+        gap: 3vw;
+    }
+
+    .philosophy_area2 {
+        padding: 10vw 0 20vw 0;
+    }
+
+    .philosophy_area2 .no {
+        font-size: 11vw;
+    }
+
+    .philosophy_area2 .komidasi {
+        font-size: 5vw;
+    }
+
+    .philosophy_area2 .komidasi_box {
+        gap: 2vw;
+        margin-bottom: 7vw;
+    }
+
+
+
+
+
+    /* faq ======================================================================================== */
+
+
+    .faq_area2 {
+        margin: 20vw 0 0 0;
+    }
+
+    .cta_box {
+        flex-direction: column;
+        align-items: start;
+        padding: 15vw 0 10vw 0;
+    }
+
+    .cta_box .midasi {
+        font-size: 6.5vw;
+    }
+
+    .cta_box .roma {
+        margin-bottom: 2vw;
+    }
+
+    .contact_btn_box {
+        width: fit-content;
+    }
+
+
+
+
+
+
+    /* blog ======================================================================================== */
+
+
+    .blog_box {
+        grid-template-columns: 1fr;
+        gap: 5vw;
+    }
+
+
+
+    /* seminar ======================================================================================== */
+
+    .seminar_area2 {
+        margin-top: 20vw;
+    }
+
+
+    /* about ======================================================================================== */
+
+    .about_area1 .box {
+        width: 100%;
+    }
+
+    .about_area1 .list {
+        border-bottom: solid #ffffff70 0.5vw;
+        padding: 3.5vw 2vw 1.5vw 2vw;
+        gap: 2vw;
+    }
+
+    .about_area1 .list .koumoku{
+        font-weight: 400;
+    }
+
+    .about_area1 iframe {
+        width: 100%;
+        height: 50vw;
+        margin-top: 10vw;
+    }
+
+
+
+
+
+    /* recruit ======================================================================================== */
+
+    .recruit_area1 .img_box {
+        height: 110vw;
+    }
+
+    .recruit_area1 .img_box .no1 {
+        width: 46vw;
+        position: absolute;
+        left: 0vw;
+        top: 7vw;
+        z-index: -1;
+    }
+
+    .recruit_area1 .img_box .no2 {
+        width: 60vw;
+        position: absolute;
+        left: 30vw;
+        top: 30vw;
+    }
+
+    .recruit_area1 .img_box .no3 {
+        width: 50vw;
+        position: absolute;
+        right: 31vw;
+        top: 62vw;
+        z-index: 0;
+    }
+
+    .recruit_area2 .box {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .recruit_area2 .box .l {
+        width: 100%;
+    }
+
+    .recruit_area2 .box .r {
+        width: 100%;
+    }
+
+    .recruit_area2 .wrapper_w {
+        margin-top: 10vw;
+        flex-direction: column;
+    }
+
+    .recruit_area2 .wrapper_w .l {
+        width: 100%;
+    }
+
+    .recruit_area2 .wrapper_w .r {
+        width: 100%;
+    }
+
+    .recruit_area2 .komidasi {
+        margin-bottom: 5vw;
+    }
+
+    .recruit_area2 .wrapper_w .solid {
+        width: 100%;
+        height: 0.5vw;
+        margin: 10vw 0 ;
+    }
+
+    .recruit_area2#no2 {
+        margin-top: 20vw;
+    }
+
+    .recruit_area3 .w_85 {
+        flex-direction: column;
+        gap: 10vw;
+    }
+
+    .recruit_area3 .w_85 .l {
+        width: 100%;
+    }
+
+    .recruit_area3 .w_85 .r {
+        width: 100%;
+        height: 60vw;
+    }
+
+    .recruit_area3 .midasi {
+        font-size: 7.5vw;
+        margin-bottom: 7vw;
+    }
+
+    .recruit_area3 .w_85 .r .no1 {
+        width: 65vw;
+        position: absolute;
+        top: 20vw;
+        left: 0vw;
+    }
+
+    .recruit_area3 .w_85 .r .no2 {
+        width: 55vw;
+        position: absolute;
+        top: 0vw;
+        left: 34vw;
+        z-index: -1;
+    }
+
+    .recruit_area3 {
+        padding-bottom: 20vw;
+    }
+
+    .recruit_area4 .w_85 {
+        flex-direction: column;
+    }
+
+
+    .recruit_area4 .w_85 .l {
+        width: 100%;
+    }
+
+    .recruit_area4 .w_85 .r {
+        width: 100%;
+    }
+
+    .recruit_area4 .box {
+        margin-top: 10vw;
+    }
+
+    .recruit_area4 .box img {
+        width: 60vw;
+    }
+
+
+    /* recruit contact------------------------------- */
+
+    .recruit_area5 {
+        padding-bottom: 20vw;
+    }
+
+    .recruit_area5 label {
+        font-size: 4vw;
+    }
+
+    .recruit_area5 .contact .inner {
+        width: 90%;
+
+    }
+
+    .recruit_area5 form {
+        width: 100%;
+    }
+
+    .recruit_area5 form div {
+        flex-direction: column;
+        margin-bottom: 5vw;
+    }
+
+    .recruit_area5 .contact label {
+        margin-bottom: 10px;
+        margin: 0 0 3vw 0;
+    }
+
+    .recruit_area5 input[type="text"], .recruit_area5 input[type="email"], .recruit_area5 input[type="tel"], .recruit_area5 select {
+        width: 100%;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+
+    .recruit_area5 input[type="text"], .recruit_area5 input[type="email"], .recruit_area5 input[type="tel"], .recruit_area5 textarea, .recruit_area5 select {
+        font-size: 4vw;
+    }
+
+    .recruit_area5 textarea {
+        width: 100%;
+    }
+
+    .recruit_area5 input[type="image"]{
+        width: 100%;
+        margin-top: 20px;
+
+
+    }
+
+    .recruit_area5 .contact .required {
+        font-size: 3vw;
+        margin-left: 2.5vw;
+        padding: 0.2vw 0.8vw;
+    }
+
+    .recruit_area5 input[type="text"], .recruit_area5 input[type="email"], .recruit_area5 input[type="tel"], .recruit_area5 textarea, .recruit_area5 select {
+        padding: 2vw;
+    }
+
+    .recruit_area5 textarea {
+        height: 35vw;
+    }
+
+    .recruit_area5 input[type="text"], .recruit_area5 input[type="email"], .recruit_area5 input[type="tel"], .recruit_area5 textarea, .recruit_area5 select {
+        border-radius: 2vw;
+    }
+
+    .recruit_area5 .contact button {
+        width: 50vw;
+    }
+
+
+
+
+
+    /* review ======================================================================================== */ 
+
+    .review_area1 {
+        margin-bottom: 20vw;
+    }
+
+    .review_area1 .box {
+        flex-direction: column;
+        gap: 5vw;
+    }
+
+    .review_area1 .box .l {
+        width: 100%;
+    }
+
+    .review_area1 .box .r {
+        width: 100%;
+    }
+
+    .review_area1 .store {
+        font-size: 4vw;
+    }
+
+    .review_area1 .name {
+        font-size: 7.5vw;
+    }
+
+    .review_area1 .link_box {
+        padding-top: 5vw;
+        gap: 2vw;
+    }
+    
+    .review_area1 .link {
+        border: solid #ffffff80 0.4vw;
+        padding: 0.5vw 5vw;
+        font-size: 4vw;
+    }
+
+
+    .review_area1 .container#no2 {
+        margin-top: 20vw;
+    }
+
+    .review_area2 {
+        margin: 15vw 0 20vw 0;
+    }
+
+
+
+
+
+
+
+
+    /* news ======================================================================================== */
+
+    .news_area1 .container ul {
+        width: 100%;
+        gap: 2vw;
+    }
+
+    .news_area1 .container li {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5vw;
+        padding: 2vw 13vw 2vw 2.5vw;
+    }
+
+    .news_area1 .container li .day {
+        font-size: 4vw;
+    }
+
+    .news_area1 .container .text {
+        margin-left: 0;
+    }
+    .news_area1 li a {
+        width: 7vw;
+        right: 4vw;
+    }
+
+
+
+
+
+    /* contact ======================================================================================== */
+
+
+
+    .contact_area1 .wrapper_w {
+        margin: 10vw 0 20vw 0;
+    }
+    
+    .contact_area1 label {
+        font-size: 4vw;
+    }
+
+    .contact_area1 .contact .inner {
+        width: 90%;
+
+    }
+
+    .contact_area1 form {
+        width: 100%;
+    }
+
+    .contact_area1 form div {
+        flex-direction: column;
+        margin-bottom: 5vw;
+    }
+
+    .contact_area1 .contact label {
+        margin-bottom: 10px;
+        margin: 0 0 3vw 0;
+    }
+
+    .contact_area1 input[type="text"], .contact_area1 input[type="email"], .contact_area1 input[type="tel"], .contact_area1 select {
+        width: 100%;
+        height: 10vw;
+        border-radius: 2vw;
+    }
+
+    .contact_area1 input[type="text"], .contact_area1 input[type="email"], .contact_area1 input[type="tel"], .contact_area1 textarea, .contact_area1 select {
+        font-size: 4vw;
+    }
+
+    .contact_area1 textarea {
+        width: 100%;
+    }
+
+    .contact_area1 input[type="image"]{
+        width: 100%;
+        margin-top: 20px;
+
+
+    }
+
+    .contact_area1 .contact .required {
+        font-size: 3vw;
+        margin-left: 2.5vw;
+        padding: 0.2vw 0.8vw;
+    }
+
+    .contact_area1 input[type="text"], .contact_area1 input[type="email"], .contact_area1 input[type="tel"], .contact_area1 textarea, .contact_area1 select {
+        padding: 2vw;
+    }
+
+    .contact_area1 textarea {
+        height: 35vw;
+    }
+
+    .contact_area1 input[type="text"], .contact_area1 input[type="email"], .contact_area1 input[type="tel"], .contact_area1 textarea, .contact_area1 select {
+        border-radius: 2vw;
+    }
+
+    .contact_area1 .contact button {
+        width: 50vw;
+    }
+
+
+
+}
